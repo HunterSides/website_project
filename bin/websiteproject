@@ -2,7 +2,7 @@
 
 require_relative '../lib/website_project'
 
-WebsiteProject::CLI.new.call          #module::class.classmethod(triggers initialize method
+WebsiteProject::CLI.new.call
 
 
 ##executable file##
