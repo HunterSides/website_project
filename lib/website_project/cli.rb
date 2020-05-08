@@ -3,6 +3,7 @@ class WebsiteProject::CLI
   
   def call 
     puts "Welcome!"
+    binding.pry
     #choose_criteria
     #list_companies
     #choose_company

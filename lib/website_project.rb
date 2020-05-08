@@ -7,9 +7,6 @@ require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
-
-
-
 module WebsiteProject
   class Error < StandardError; end
   # Your code goes here...
