@@ -1,3 +1,5 @@
+require '../website_project'
+
 class WebsiteProject::CLI 
 
   
@@ -19,4 +21,8 @@ class WebsiteProject::CLI
     puts "#{index}, #{list}"
    end
   end 
+  
+  
 end
+
+

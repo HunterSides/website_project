@@ -1,5 +1,4 @@
-require 'nokogiri'
-require 'open-uri'
+require '../website_project'
 
 class WebsiteProject::Scraper 
   @best_places_to_work = []
