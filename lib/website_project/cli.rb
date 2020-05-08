@@ -5,10 +5,7 @@ class WebsiteProject::CLI
   
   def call 
     puts "Welcome!"
-    #choose_criteria
-    #list_companies
-    #choose_company
-    #give_info_on_company
+  
   end 
   
   def choose_criteria
