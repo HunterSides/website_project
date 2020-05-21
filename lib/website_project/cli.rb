@@ -14,8 +14,8 @@ class WebsiteProject::CLI
   end
  
   def print_options
-    @user_options.each.with_index(1) do |index, list| 
-    puts "#{index}, #{list}"
+    @user_options.each.with_index(1) do |list, index| 
+    puts "#{index}. #{list}"
    end
   end 
   
