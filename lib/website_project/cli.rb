@@ -35,7 +35,8 @@ class WebsiteProject::CLI
     input.to_i <= data.length && input.to_i > 0
   end 
   
-  def list_selected_companies(input)
+  def list_selected_companies(input) #method should print selection
+    puts "Here are the top #{companies}"
   end 
   
   
