@@ -4,7 +4,7 @@ class WebsiteProject::CLI
 
   
   def call 
-    puts "Welcome!"
+    puts "\nWelcome!\n"
     choose_options
     print_options
     get_user_selection
@@ -15,14 +15,25 @@ class WebsiteProject::CLI
   end
  
   def print_options
+    puts "Please make a selection"
     @user_options.each.with_index(1) do |list, index| 
     puts "#{index}. #{list}"
    end
   end 
   
   def get_user_selection
-    input = user.get.strip
+    input = gets.strip.to_i
+    
+    if valid_input(input, @user_options)
+    end 
+    
+    
   end 
+  
+  def valid_input(input, data)
+    input.to_i <= data.length && input.to_i > 0
+  end 
+
   
   
 end
