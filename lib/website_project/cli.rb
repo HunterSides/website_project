@@ -7,6 +7,7 @@ class WebsiteProject::CLI
     puts "Welcome!"
     choose_options
     print_options
+    get_user_selection
   end 
   
   def choose_options
@@ -17,6 +18,10 @@ class WebsiteProject::CLI
     @user_options.each.with_index(1) do |list, index| 
     puts "#{index}. #{list}"
    end
+  end 
+  
+  def get_user_selection
+    input = user.get.strip
   end 
   
   
