@@ -33,7 +33,9 @@ class WebsiteProject::CLI
   end 
   
   def list_selected_companies(input) #method should print selection
-    puts "Here are the top #{companies}"
+    options = @user_options [input - 1]
+    
+    puts "Here are the top companies for #{input}"
   end 
   
   
