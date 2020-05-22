@@ -1,11 +1,11 @@
 
 
 class WebsiteProject::Scraper 
-  @best_places_to_work = []
-  @best_small_company = []
-  @best_midsize_places_to_work = []
-  @best_paying_companies = []
-  @best_company_with_benefits = []
+  @@best_places_to_work = []
+  @@best_small_company = []
+  @@best_midsize_places_to_work = []
+  @@best_paying_companies = []
+  @@best_company_with_benefits = []
   
   
   def best_places_to_work
@@ -28,7 +28,7 @@ class WebsiteProject::Scraper
     puts results.count
     
     results.each do |r| 
-      @best_small_company = r.css(".title").text
+      @@best_small_company = r.css(".title").text
     end
   end
   
@@ -40,7 +40,7 @@ class WebsiteProject::Scraper
     puts results.count
     
     results.each do |r| 
-      @best_midsize_places_to_work = r.css(".title").text
+      @@best_midsize_places_to_work = r.css(".title").text
     end
   end
   
@@ -52,7 +52,7 @@ class WebsiteProject::Scraper
     puts results.count
     
     results.each do |r| 
-      @best_paying_companies = r.css(".title").text
+      @@best_paying_companies = r.css(".title").text
     end
   end
   
@@ -64,7 +64,7 @@ class WebsiteProject::Scraper
     puts results.count
     
     results.each do |r| 
-      @best_company_with_benefits = r.css(".title").text
+      @@best_company_with_benefits = r.css(".title").text
     end
   end
 end 
