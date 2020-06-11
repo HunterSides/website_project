@@ -8,8 +8,10 @@ class WebsiteProject::CLI
   end 
   
   def choose_options
-   @user_options = ['Top 100 companies','Top 50 small companies','Top 50 midsize companies','Top 50 paying companies','Top 50 companies with benefits']
+   @user_options = WebsiteProject::Options.all
   end
+  
+  ['Top 100 companies','Top 50 small companies','Top 50 midsize companies','Top 50 paying companies','Top 50 companies with benefits']
  
   def print_options
     puts "Please make a selection"
