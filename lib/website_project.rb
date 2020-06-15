@@ -1,7 +1,7 @@
 require_relative 'website_project/version'
 require_relative 'website_project/cli'
 require_relative 'website_project/scraper'
-require_relative 'website_project/website'
+require_relative 'website_project/options'
 
 require 'pry'
 require 'nokogiri'
