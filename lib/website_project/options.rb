@@ -8,6 +8,7 @@ class WebsiteProject::Options
   end
   
   def self.all
+    WebsiteProject::Scraper.sc
     @@all
   end
   

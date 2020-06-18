@@ -8,6 +8,7 @@ class WebsiteProject::CLI
   end 
   
   def get_options
+  
    @user_options = WebsiteProject::Options.all
   end
   
