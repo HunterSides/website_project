@@ -8,7 +8,7 @@ class WebsiteProject::Options
   end
   
   def self.all
-    WebsiteProject::Scraper.sc
+    WebsiteProject::Scraper.best_places_to_work
     @@all
   end
   
