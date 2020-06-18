@@ -1,5 +1,3 @@
-
-
 class WebsiteProject::Scraper 
   @@best_places_to_work = []
   @@best_small_company = []

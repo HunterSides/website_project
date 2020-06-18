@@ -2,21 +2,19 @@ class WebsiteProject::CLI
 
   def call 
     puts "\nWelcome!\n"
-    choose_options
+    get_options
     print_options
     get_user_selection
   end 
   
-  def choose_options
+  def get_options
    @user_options = WebsiteProject::Options.all
   end
   
-  
- 
   def print_options
     puts "Please make a selection"
-    @user_options.each.with_index(1) do |list, index| 
-    puts "#{index}. #{list}"
+    @user_options.each.with_index(1) do |option, index| 
+    puts "#{index}. #{option.name}"
    end
   end 
   
