@@ -15,7 +15,7 @@ class WebsiteProject::CLI
     @user_options.each.with_index(1) do |option, index| 
     puts "#{index}. #{option.name}"
    end
-   puts "Please make a selection"
+   puts "Please make a selection for more info.."
   end 
   
   def get_user_selection
@@ -29,8 +29,12 @@ class WebsiteProject::CLI
   
   def list_selected_companies(input) 
     options = @user_options [input - 1]
-    puts "Here are the #{options.name}"
+    puts "Here is info for #{options.name}"
   end 
+  
+  def info_about_company
+    #should take users selection and print basic info for company
+  end
 end
 
 
