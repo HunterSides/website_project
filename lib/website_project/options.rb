@@ -14,9 +14,9 @@ class WebsiteProject::Options
   
   def save 
     @@all << self
+   
   end
 end
 
 
 
-#'Top 100 companies','Top 50 small companies','Top 50 midsize companies','Top 50 paying companies','Top 50 companies with benefits'

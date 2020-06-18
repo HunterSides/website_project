@@ -1,22 +1,21 @@
 class WebsiteProject::CLI 
 
   def call 
-    puts "\nWelcome!\n"
+    puts "\nWelcome! Here are the top 100 companies in the Austin area.\n"
     get_options
     print_options
     get_user_selection
   end 
   
   def get_options
-  
-   @user_options = WebsiteProject::Options.all
-  end
+    @user_options = WebsiteProject::Options.all
+   end
   
   def print_options
-    puts "Please make a selection"
     @user_options.each.with_index(1) do |option, index| 
     puts "#{index}. #{option.name}"
    end
+   puts "Please make a selection"
   end 
   
   def get_user_selection
@@ -28,14 +27,9 @@ class WebsiteProject::CLI
     input.to_i <= data.length && input.to_i > 0
   end 
   
-  def list_selected_companies(input) #method should print selection
+  def list_selected_companies(input) 
     options = @user_options [input - 1]
-    puts "Here are the #{options}"
-    ##to implement
-    #WebsiteProject::Website.all.each.with_index(1) do |website|
-      #puts website.name
-    #end 
-    #get_user_selection
+    puts "Here are the #{options.name}"
   end 
 end
 

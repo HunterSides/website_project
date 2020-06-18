@@ -7,12 +7,9 @@ class WebsiteProject::Scraper
     
     results = page.css(".view-best-places-to-work .view-content .views-row")
     
-    
     results.each do |r| 
-      @best_places_to_work = r.css(".title").text
-      
+      name = r.css(".title").text
+      WebsiteProject::Options.new(name)
     end
   end
-  
-
 end 
