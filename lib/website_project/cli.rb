@@ -34,6 +34,7 @@ class WebsiteProject::CLI
   
   def info_about_company
     #should take users selection and print basic info for company
+    
   end
 end
 
