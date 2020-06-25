@@ -1,6 +1,5 @@
 class WebsiteProject::Scraper 
-  @@best_places_to_work = []
-
+ 
   def self.best_places_to_work
     site = "https://www.builtinaustin.com/companies/best-places-to-work-austin-2020"
     page = Nokogiri::HTML(open(site))
