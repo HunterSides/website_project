@@ -1,12 +1,12 @@
 class WebsiteProject::Info 
   
-  attr_accessor :name, :option
+  attr_accessor :info, :option
   @@all = []
   
-  def initialize(name, option)
-    @name = name
+  def initialize(info, option)
+    @info = info
     @option = option
-    add_to_option
+    add_to_options
     save 
   end 
   
@@ -14,7 +14,7 @@ class WebsiteProject::Info
     @@all
   end 
   
-  def add_to_option #notifies option of info
+  def add_to_options #notifies options of info
     @option.info  << self unless @option.info.include?(self) 
   end
   

@@ -16,11 +16,11 @@ class WebsiteProject::Scraper
     site = "https://www.builtinaustin.com/companies/best-places-to-work-austin-2020"
     page = Nokogiri::HTML(open(site))
     
-    info = page.css(".view-best-places-to-work .view-content .views-row")
+    results = page.css(".view-best-places-to-work .view-content .views-row")
     
-    info.each do |i|
-      about_us = i.css("field-about-us").text 
-      WebsiteProject::Info.new(about_us)
+    results.each do |i|
+      info = i.css("field-about-us").text 
+      WebsiteProject::Info.new(option, info)
     end
   end
 end 

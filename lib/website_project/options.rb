@@ -17,7 +17,6 @@ class WebsiteProject::Options
 
   def get_info 
     WebsiteProject::Scraper.scrape_info(self) if @info.empty? #if info is empty then scrape
-    @info
   end
   
   def save 
