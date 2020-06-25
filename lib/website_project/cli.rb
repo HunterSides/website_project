@@ -29,11 +29,12 @@ class WebsiteProject::CLI
   
   def list_selected_companies(input) 
     options = @user_options [input - 1]
-    #info = options.info
-    #call on info_about_company and add it to a variable
+    options.get_info
     puts "Here is info for #{options.name}"
+    options.info.each.with_index(1) do |info, idx|
+      puts "#{idx}. #{option.info}"
+    end
   end 
-  
 end
 
 

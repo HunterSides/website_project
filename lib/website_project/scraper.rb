@@ -11,4 +11,8 @@ class WebsiteProject::Scraper
       WebsiteProject::Options.new(name)
     end
   end
+  
+  def self.scrape_info(option)
+    
+  end
 end 

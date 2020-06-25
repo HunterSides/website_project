@@ -1,7 +1,8 @@
 class WebsiteProject::Options 
+  attr_accessor :name, :info
+  
   @@all = []
-  attr_accessor :name
-  attr_writer :info
+  
   
   def initialize(name)
     @name = name
@@ -14,8 +15,9 @@ class WebsiteProject::Options
     @@all
   end
 
-  def info 
-    WebsiteProject::Scraper.company_info if @info.empty? #if info is empty then scrape
+  def get_info 
+    WebsiteProject::Scraper.scrape_info(self) if @info.empty? #if info is empty then scrape
+    @info
   end
   
   def save 
