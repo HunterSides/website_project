@@ -1,6 +1,6 @@
 class WebsiteProject::Info 
   
-  attr_accessor :name, :option 
+  attr_accessor :name, :option
   @@all = []
   
   def initialize(name, option)
