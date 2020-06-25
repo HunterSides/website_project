@@ -19,8 +19,10 @@ class WebsiteProject::Scraper
     results = page.css(".view-best-places-to-work .view-content .views-row")
     
     results.each do |i|
-      info = i.css("field-about-us").text 
-      WebsiteProject::Info.new(option, info)
+      info = i.css(".field-about-us").text 
+      binding.pry
+      WebsiteProject::Info.new(info)
+      
     end
   end
 end 

@@ -3,9 +3,8 @@ class WebsiteProject::Info
   attr_accessor :info, :option
   @@all = []
   
-  def initialize(info, option)
+  def initialize(info)
     @info = info
-    @option = option
     add_to_options
     save 
   end 
