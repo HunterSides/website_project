@@ -20,7 +20,7 @@ class WebsiteProject::Scraper
     
     results.each do |i|
       info = i.css(".field-about-us").text 
-      binding.pry
+      
       WebsiteProject::Info.new(info)
       
     end
