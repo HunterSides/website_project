@@ -5,12 +5,14 @@ class WebsiteProject::CLI
     get_options
     print_options
     get_user_selection
+    
   end 
   
   def get_options
     @user_options = WebsiteProject::Options.all
-   end
+  end
   
+ 
   def print_options
     @user_options.each.with_index(1) do |option, index| 
     puts "#{index}. #{option.name}"
@@ -20,22 +22,25 @@ class WebsiteProject::CLI
   
   def get_user_selection
     input = gets.strip.to_i
-    list_selected_companies(input) if valid_input(input, @user_options) #calls on method if valid 
+    list_info(input) if valid_input(input, @user_options) #calls on method if valid 
   end 
     
   def valid_input(input, data)
     input.to_i <= data.length && input.to_i > 0
   end 
   
-  def list_selected_companies(input) 
-    options = @user_options [input - 1]
-    options.get_info
-    puts "Here is info for #{options.name}"
+  def list_info(input) 
+    user_selection = @user_options [input - 1]
+    user_selection.get_info
+    puts "Here is info for #{options.name}" #output message for selected company
     options.info.each.with_index(1) do |info, idx|
       puts "#{idx}. #{option.info}"
     end
   end 
 end
+
+
+  
 
 
 
