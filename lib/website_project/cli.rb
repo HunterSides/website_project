@@ -32,8 +32,8 @@ class WebsiteProject::CLI
   def list_info(input) 
     user_selection = @user_options [input - 1]
     user_selection.get_info
-    puts "Here is info for #{options.name}" #output message for selected company
-    options.info.each.with_index(1) do |info, idx|
+    puts "Here is info for #{option.name}" #output message for selected company
+    option.info.each.with_index(1) do |info, idx|
       puts "#{idx}. #{option.info}"
     end
   end 

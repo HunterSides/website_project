@@ -1,12 +1,11 @@
 class WebsiteProject::Options 
-  attr_accessor :name, :ref, :info
+  attr_accessor :name,:info
   
   @@all = []
   
   
-  def initialize(name , ref)
+  def initialize(name)
     @name = name
-    @ref = ref
     @info = []
     save 
   end
