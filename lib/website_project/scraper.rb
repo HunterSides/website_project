@@ -22,6 +22,7 @@ class WebsiteProject::Scraper
     results.each do |i|
       info = i.css(".field-about-us").text 
       WebsiteProject::Info.new(info, option)
+    binding.pry
     end
   end
 end 

@@ -21,3 +21,5 @@ Classes
 - Version
 
 
+To do next. Get rid of options/info and create one company object
+Scrape info at start of program getting rid of the scrape (if empty)
