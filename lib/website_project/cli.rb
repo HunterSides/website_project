@@ -11,9 +11,6 @@ class WebsiteProject::CLI
     goodbye
   end 
   
-  
-  
- 
   def print_options
     puts "Loading companies.."
     WebsiteProject::Company.prepare_to_list

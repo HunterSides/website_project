@@ -1,5 +1,5 @@
 class WebsiteProject::Company
-  attr_accessor :name,:info
+  attr_accessor :name,:info, :id
   
   @@all = []
   
