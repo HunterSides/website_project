@@ -12,16 +12,14 @@ class WebsiteProject::CLI
     goodbye
   end 
   
-  def get_options
-    @user_options = WebsiteProject::Options.all
-  end
+  
   
  
   def print_options
-    @user_options.each.with_index(1) do |option, index| 
-    puts "#{index}. #{option.name}"
-   end
-   puts "Please make a selection for more info.."
+    puts "Loading companies.."
+    WebsiteProject::Company.prepare_to_list
+    JsScrapingDemo::Movie.all.each{|m| puts "#{m.id}: #{m.name}"}
+    puts "Please make a selection for more info.."
   end 
   
   def get_user_selection
@@ -45,6 +43,7 @@ class WebsiteProject::CLI
   end
   
   def list_info(input) 
+    Puts "Loading your chosen company..."
     company = WebsiteProject::Company.get_info(@input)
     puts "Here is info for #{option.name}" #output message for selected company
     option.info.each.with_index(1) do |info, idx|
