@@ -20,7 +20,7 @@ class WebsiteProject::Scraper
     page = Nokogiri::HTML(open(site))
     info = page.css(".description").text 
     company.key_info = info
-    binding.pry
+    
    end
 end 
 
