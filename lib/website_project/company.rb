@@ -15,6 +15,7 @@ class WebsiteProject::Company
     @@all << self
   end
   
+  
   def self.all
     @@all
   end
@@ -40,7 +41,7 @@ class WebsiteProject::Company
 
   def get_info
     WebsiteProject::Scraper.scrape_company_info(self) if @key_info.empty? #self is giving info for every company instead of by selected ID
-    binding.pry
+    
   end
   
 end

@@ -40,19 +40,13 @@ class WebsiteProject::CLI
   
   def list_info
     puts "Loading your chosen company..."
-    company = WebsiteProject::Company.find_by_id(@input) #company is equal to chosen company based off of input, each company should be assigned a @info attribute that you can access by                                                                 #calling company.get_info
+    company = WebsiteProject::Company.find_by_id(@input) #company is equal to chosen company based off of input, each company should be assigned a @info attribute that you can access by                                                                #calling company.get_info
+    
     company.get_info                                    #this says to scrape info for the ID of selected company 
     
   end
-  
-  
-   def show_event_details(event)
-    puts event.name
-    event.key_info.each {|i| puts "- #{i}"}
-  end 
-  
-  
- def get_next_step
+
+  def get_next_step
     puts "\n#{@@cyn}To see listing again type #{@@blu}'list'#{@@cyn} or say #{@@blu}'bye'#{@@cyn} to exit#{@@white}"
     get_user_selection
   end
