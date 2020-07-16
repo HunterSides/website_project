@@ -18,7 +18,8 @@ class WebsiteProject::Scraper
     site = "https://www.builtinaustin.com/companies/best-places-to-work-austin-2020"
     page = Nokogiri::HTML(open(site))
     
-    results = page.css(".view-best-places-to-work .view-content .views-row")
+    results = page.css(".view-best-places-to-work .view-content .views-row") #need to pass company into scrape
+    
     results.each do |i|
       info = i.css(".field-about-us").text 
       
