@@ -56,6 +56,10 @@ class WebsiteProject::CLI
     puts "\n#{@@cyn}To see listing again type #{@@blu}'list'#{@@cyn} or say #{@@blu}'bye'#{@@cyn} to exit#{@@white}"
     get_user_input
   end
+  
+  def goodbye
+    puts "Have a wonderful day!"
+  end
 end
 
 
