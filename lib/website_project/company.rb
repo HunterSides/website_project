@@ -1,11 +1,12 @@
 class WebsiteProject::Company
-  attr_accessor :name,:info, :id
+  attr_accessor :name,:key_info, :id
   
   @@all = []
   
   
   def initialize(name)
     @name = name
+    @key_info = []
     assign_id
     save 
   end
@@ -34,9 +35,10 @@ class WebsiteProject::Company
   def self.find_by_id(input)
     all.find{|c| c.id == input.to_i}
   end
+  
 
   def get_info 
-    WebsiteProject::Scraper.scrape_info(self) 
+    WebsiteProject::Scraper.scrape_info(self) if @key_info.empty?
   end
   
 end
