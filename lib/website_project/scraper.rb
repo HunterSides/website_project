@@ -8,7 +8,8 @@ class WebsiteProject::Scraper
     
     results.each do |r| 
       name = r.css(".title").text
-      ref = m.attr("value")
+      ref = r.css("a").attr("href").value
+      
       WebsiteProject::Company.new(name, ref)
     
     end
@@ -16,13 +17,12 @@ class WebsiteProject::Scraper
   
   def self.scrape_company_info(company)
     site = "https://www.builtinaustin.com/company/#{company.ref}"
-    binding.pry
     page = Nokogiri::HTML(open(site))
     
     results = page.css(".view-best-places-to-work .view-content .views-row") #need to pass company into scrape
     
     results.each do |i|
-      info = i.css(".field-about-us").text 
+      info = i.css(".desription").text 
       
       company.key_info = info
       

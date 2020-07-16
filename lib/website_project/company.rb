@@ -1,11 +1,12 @@
 class WebsiteProject::Company
-  attr_accessor :name,:key_info,:id
+  attr_accessor :name,:key_info,:id, :ref
   
   @@all = []
   
   
-  def initialize(name)
+  def initialize(name,ref)
     @name = name
+    @ref = ref
     assign_id
     save 
   end
