@@ -39,7 +39,7 @@ class WebsiteProject::Company
   
 
   def get_info
-    WebsiteProject::Scraper.scrape_company_info(self) if @key_info.empty? #self is giving info for every company instead of by selected ID
+    WebsiteProject::Scraper.scrape_company_info(self) unless @key_info #self is giving info for every company instead of by selected ID
     
   end
   
