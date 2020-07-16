@@ -7,6 +7,7 @@ class WebsiteProject::Company
   def initialize(name)
     @name = name
     @info = info
+    assign_id
     save 
   end
   
@@ -20,9 +21,8 @@ class WebsiteProject::Company
   end
   
   
- 
   def self.find_by_id(input)
-    all.find{|m| m.id == input.to_i}
+    all.find{|c| c.id == input.to_i}
   end
 
   def get_info 
