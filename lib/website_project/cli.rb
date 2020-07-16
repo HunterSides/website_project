@@ -40,7 +40,7 @@ class WebsiteProject::CLI
   
   def list_info
     puts "Loading your chosen company..."
-    company = WebsiteProject::Company.find_by_id(@input)
+    company = WebsiteProject::Company.find_by_id(@input) #company is = to chosen company based off of input, each company should be assigned a @info attribute that you can access by                                                                      #calling company.info
     company
     puts "Here is info for selected company #{company_info}"
   end
