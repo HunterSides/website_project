@@ -30,7 +30,7 @@ class WebsiteProject::CLI
     puts "#{@@muted}Sorry that's not a valid input! Please try again!#{@@white}"
   end
 
-  def list_info(input) 
+  def list_info
     puts "Loading your chosen company..."
     company = WebsiteProject::Company.find_by_id(@input)
     company.get_info

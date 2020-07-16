@@ -37,7 +37,7 @@ class WebsiteProject::Company
   end
 
   def get_info 
-    WebsiteProject::Scraper.scrape_info(self) if @info.empty? #if info is empty then scrape
+    WebsiteProject::Scraper.scrape_info(self) 
   end
   
 end
