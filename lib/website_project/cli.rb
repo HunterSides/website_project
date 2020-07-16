@@ -25,7 +25,7 @@ class WebsiteProject::CLI
     puts "Please make a selection for more info.."
   end 
   
-  def get_user_selection
+  def get_user_selection #assigns @input to a number
     @input = gets.strip.to_i
   end 
     
@@ -37,16 +37,22 @@ class WebsiteProject::CLI
     puts "#{@@muted}Sorry that's not a valid input! Please try again!#{@@white}"
   end
   
+  
   def list_info
     puts "Loading your chosen company..."
     company = WebsiteProject::Company.find_by_id(@input)
-    company.get_info(@input)
-    binding.pry
-    puts "Here is info for selected company #{company.key_info}"
+    company
+    puts "Here is info for selected company #{company_info}"
   end
- 
   
-  def get_next_step
+  
+   def show_event_details(event)
+    puts event.name
+    event.key_info.each {|i| puts "- #{i}"}
+  end 
+  
+  
+ def get_next_step
     puts "\n#{@@cyn}To see listing again type #{@@blu}'list'#{@@cyn} or say #{@@blu}'bye'#{@@cyn} to exit#{@@white}"
     get_user_selection
   end

@@ -14,7 +14,7 @@ class WebsiteProject::Scraper
     end
   end
   
-  def self.scrape_info(company)
+  def self.scrape_company_info(company)
     site = "https://www.builtinaustin.com/companies/best-places-to-work-austin-2020"
     page = Nokogiri::HTML(open(site))
     

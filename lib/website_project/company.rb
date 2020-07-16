@@ -36,9 +36,14 @@ class WebsiteProject::Company
     all.find{|c| c.id == input.to_i}
   end
   
+  
 
-  def get_info 
-    WebsiteProject::Scraper.scrape_info(self) if @key_info.empty?
+  def get_info
+    WebsiteProject::Scraper.scrape_company_info(self) if @key_info.empty? #self is giving info for every company instead of by selected ID
+    binding.pry
   end
   
 end
+
+
+#figure out a way to select a companies info from @key_info based off of a companies ID number
