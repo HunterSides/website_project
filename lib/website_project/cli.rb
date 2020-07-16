@@ -18,7 +18,7 @@ class WebsiteProject::CLI
   def print_options
     puts "Loading companies.."
     WebsiteProject::Company.prepare_to_list
-    JsScrapingDemo::Movie.all.each{|m| puts "#{m.id}: #{m.name}"}
+    WebsiteProject::Company.all.each{|m| puts "#{m.id}: #{m.name}"}
     puts "Please make a selection for more info.."
   end 
   
@@ -43,11 +43,11 @@ class WebsiteProject::CLI
   end
   
   def list_info(input) 
-    Puts "Loading your chosen company..."
-    company = WebsiteProject::Company.get_info(@input)
-    puts "Here is info for #{option.name}" #output message for selected company
-    option.info.each.with_index(1) do |info, idx|
-      puts "#{idx}. #{option.info}"
+    puts "Loading your chosen company..."
+    company = WebsiteProject::Company.find_by_id(@input)
+    company.get_info
+    puts "Here is info for #{company.name}" #output message for selected company
+    puts "#{company.info}"
     end
   end 
   
