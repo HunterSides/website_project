@@ -22,8 +22,8 @@ class WebsiteProject::CLI
     input = gets.strip.to_i
   end 
     
-  def valid_input(input, data)
-    input.to_i <= data.length && input.to_i > 0
+  def valid_input
+    WebsiteProject::Company.exists?(@input)
   end 
   
   def show_error
