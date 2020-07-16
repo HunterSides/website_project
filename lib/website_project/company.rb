@@ -11,6 +11,13 @@ class WebsiteProject::Company
     save 
   end
   
+  def save 
+    @@all << self
+  end
+  
+  def self.all
+    @@all
+  end
   
   def assign_id
     @id = @@all.size + 1
@@ -29,7 +36,4 @@ class WebsiteProject::Company
     WebsiteProject::Scraper.scrape_info(self) if @info.empty? #if info is empty then scrape
   end
   
-  def save 
-    @@all << self
-  end
 end

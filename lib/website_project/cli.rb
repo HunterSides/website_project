@@ -3,7 +3,6 @@ class WebsiteProject::CLI
   def call 
     puts "\nWelcome! Here are the top 100 companies in the Austin area.\n"
     while @input != 'bye'
-      get_options
       print_options
       get_user_selection
       valid_input ? list_info : show_error
@@ -46,10 +45,10 @@ class WebsiteProject::CLI
     puts "Loading your chosen company..."
     company = WebsiteProject::Company.find_by_id(@input)
     company.get_info
-    puts "Here is info for #{company.name}" #output message for selected company
+    puts "Here is info for #{input.name}" #output message for selected company
     puts "#{company.info}"
-    end
-  end 
+  end
+ 
   
   def get_next_step
     puts "\n#{@@cyn}To see listing again type #{@@blu}'list'#{@@cyn} or say #{@@blu}'bye'#{@@cyn} to exit#{@@white}"
