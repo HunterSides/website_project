@@ -40,7 +40,7 @@ class WebsiteProject::CLI
   def list_info
     puts "Loading your chosen company..."
     company = WebsiteProject::Company.find_by_id(@input)
-    #company.get_info
+    company.get_info
     binding.pry
     puts "Here is info for selected company #{company.info}"
   end

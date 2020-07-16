@@ -6,7 +6,6 @@ class WebsiteProject::Company
   
   def initialize(name)
     @name = name
-    @info = info
     assign_id
     save 
   end
