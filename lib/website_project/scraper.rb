@@ -18,11 +18,10 @@ class WebsiteProject::Scraper
   def self.scrape_company_info(company)
     site = "https://www.builtinaustin.com#{company.ref}"
     page = Nokogiri::HTML(open(site))
-    
-    info = page.css(".desription").text #need to pass company into scrape
+    info = page.css(".description").text 
     company.key_info = info
     binding.pry
-  end
+   end
 end 
 
 
