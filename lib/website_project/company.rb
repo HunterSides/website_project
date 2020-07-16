@@ -23,6 +23,10 @@ class WebsiteProject::Company
     @id = @@all.size + 1
   end
   
+  def self.exists?(idx)
+    (1..all.length).include?(idx.to_i)
+  end
+  
   def self.prepare_to_list
     WebsiteProject::Scraper.best_places_to_work if all.empty? #if @@all is empty then scrape
   end
