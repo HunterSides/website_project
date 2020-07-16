@@ -19,7 +19,7 @@ class WebsiteProject::CLI
   end 
   
   def get_user_selection
-    input = gets.strip.to_i
+    @input = gets.strip.to_i
   end 
     
   def valid_input

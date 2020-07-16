@@ -23,7 +23,7 @@ class WebsiteProject::Company
     @id = @@all.size + 1
   end
   
-  def self.exists?(idx)
+  def self.exists?(idx) #idx is relative to @input
     (1..all.length).include?(idx.to_i)
   end
   
