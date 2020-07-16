@@ -36,13 +36,13 @@ class WebsiteProject::CLI
   def show_error
     puts "#{@@muted}Sorry that's not a valid input! Please try again!#{@@white}"
   end
-
+  
   def list_info
     puts "Loading your chosen company..."
     company = WebsiteProject::Company.find_by_id(@input)
-    company.get_info
+    company.get_info(@input)
     binding.pry
-    puts "Here is info for selected company #{company.info}"
+    puts "Here is info for selected company #{company.key_info}"
   end
  
   
