@@ -22,7 +22,7 @@ class WebsiteProject::Scraper
     results.each do |i|
       info = i.css(".field-about-us").text 
       
-      company.key_info << info
+      company.key_info = info
       
     end
   end
