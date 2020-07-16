@@ -29,15 +29,7 @@ class WebsiteProject::CLI
   def show_error
     puts "#{@@muted}Sorry that's not a valid input! Please try again!#{@@white}"
   end
-  
-  def show_movie
-    puts "\n#{@@mag}Loading your chosen movie ...#{@@white}"
-    movie = JsScrapingDemo::Movie.find_by_id(@input)
-    movie.get_details
-    puts "\n#{movie.description}"
-    puts "\nRotten Tomatoes rating:\t#{movie.rt_rating}\t|\tAudience rating:\t#{movie.aud_rating}"
-  end
-  
+
   def list_info(input) 
     puts "Loading your chosen company..."
     company = WebsiteProject::Company.find_by_id(@input)
@@ -49,7 +41,7 @@ class WebsiteProject::CLI
   
   def get_next_step
     puts "\n#{@@cyn}To see listing again type #{@@blu}'list'#{@@cyn} or say #{@@blu}'bye'#{@@cyn} to exit#{@@white}"
-    get_user_input
+    get_user_selection
   end
   
   def goodbye
