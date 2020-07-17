@@ -48,10 +48,9 @@ class WebsiteProject::CLI
     puts "\n#{@@grn}#{company.name}#{@@white}"
     puts "\n#{company.key_info}"
     benefit_info(company)
-    
   end
   
-  def benefit_info(company) #pass in benefit ID for user to be able to select a benefit
+  def benefit_info(company) #passes in the chosen company from (list_info)
     company.get_info
     puts "\n#{@@mag}Would you like to see what benefits this company has to offer?(#{@@grn}y#{@@mag}/#{@@muted}n#{@@mag})#{@@white}?"
     @input = gets.strip
