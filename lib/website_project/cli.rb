@@ -66,10 +66,15 @@ end
 
  
   def select_benefit(company)
+    
     puts "\nPlease select a benefit from the list for more information.."
     input = gets.strip.to_i
     chosen_benefit = company.key_benefits[input - 1]
-    benefit = company.specific_benefits(chosen_benefit)
+    #chosen_benefit.to_i
+    benefits = company.specific_benefits(chosen_benefit)
+    binding.pry
+    benefits = chosen_benefit.value
+    binding.pry
     puts "#{benefit}"
     
   end 
