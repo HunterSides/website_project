@@ -47,10 +47,12 @@ class WebsiteProject::CLI
     company.get_info                                    
     puts "\n#{@@grn}#{company.name}#{@@white}"
     puts "\n#{company.key_info}"
-    puts "\n Would you like to see what benefits this company offers?(y/n)"
+    
+    puts "\n#{@@mag}Would you like to see what benefits this company offers?(#{@@grn}y#{@@mag}/#{@@muted}n#{@@mag})#{@@white}?"
     @input = gets.strip
     if @input == "y"
       puts "\n#{company.key_benefits}"
+    end
   end
 
   def get_next_step
