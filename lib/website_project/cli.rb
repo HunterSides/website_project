@@ -21,7 +21,7 @@ class WebsiteProject::CLI
   
   def print_options
     puts "\nLoading companies.."
-    sleep (2)
+    sleep (1)
     WebsiteProject::Company.prepare_to_list
     WebsiteProject::Company.all.each{|m| puts "#{m.id}: #{m.name}"}
     puts "\nPlease select a company for more info.."
@@ -53,10 +53,10 @@ class WebsiteProject::CLI
   
   def benefit_info(company)
     company.get_info
-    puts "\n#{@@mag}Would you like to see what benefits this company offers?(#{@@grn}y#{@@mag}/#{@@muted}n#{@@mag})#{@@white}?"
+    puts "\n#{@@mag}Would you like to see what benefits this company has to offer?(#{@@grn}y#{@@mag}/#{@@muted}n#{@@mag})#{@@white}?"
     @input = gets.strip
     if @input == "y"
-      puts "#{company.key_benefits.all.each}",""
+      puts "#{company.key_benefits}"
     end
   end
 
