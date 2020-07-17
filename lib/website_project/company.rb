@@ -8,6 +8,7 @@ class WebsiteProject::Company
     @name = name
     @ref = ref
     @key_benefits = []
+    @specific_benefits = []
     assign_id
     save 
   end
@@ -15,7 +16,6 @@ class WebsiteProject::Company
   def save 
     @@all << self
   end
-  
   
   def self.all
     @@all
@@ -33,21 +33,13 @@ class WebsiteProject::Company
     WebsiteProject::Scraper.best_places_to_work if all.empty? #if @@all is empty then scrape
   end
   
-  
   def self.find_by_id(input)
     all.find{|c| c.id == input.to_i}
   end
   
-  
-
   def get_info
     WebsiteProject::Scraper.scrape_company_info(self) unless @key_info #self is giving info for every company instead of by selected ID
   end
-  
-  def get_benefit(chosen_benefit)
-    WebsiteProject::Scraper.scrape_specific_benefits(chosen_benefit) unless @key_benefits #self is giving info for every company instead of by selected ID
-  end
-  
   
 end
 

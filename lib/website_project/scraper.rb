@@ -32,6 +32,7 @@ class WebsiteProject::Scraper
      
       company.specific_benefits << specific_benefit
       company.key_benefits << benefit_title
+      
     end
   end
 end
