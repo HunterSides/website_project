@@ -9,7 +9,8 @@ class WebsiteProject::CLI
 
   def call 
     puts "\n#{@@cyn}Welcome! Here are the top 100 companies in the Austin area.#{@@white}"
-    until @input == 'exit'
+    
+    while @input != "exit"
       print_options
       get_user_selection
       valid_input ? list_info : show_error
@@ -50,7 +51,7 @@ class WebsiteProject::CLI
 
   def get_next_step
     puts "\n#{@@mag}To see list again type #{@@white}'list'#{@@mag} or say #{@@white}'exit'#{@@mag} to exit#{@@white}"
-    get_user_selection
+    @input = gets.strip
   end
   
   def goodbye
