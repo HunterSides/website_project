@@ -34,12 +34,6 @@ class WebsiteProject::Scraper
   end
 end
   
-  def self.scrape_benefits(company)
-    site = "https://www.builtinaustin.com#{company.ref}/benefits"
-    binding.pry
-    page = Nokogiri::HTML(open(site))
-    info = page.css(".description").text
-  end
 end 
 
 

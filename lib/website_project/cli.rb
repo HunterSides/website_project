@@ -53,16 +53,25 @@ class WebsiteProject::CLI
   def benefit_info(company) #passes in the chosen company from (list_info)
     company.get_info
     puts "\n#{@@mag}Would you like to see what benefits this company has to offer?(#{@@grn}y#{@@mag}/#{@@muted}n#{@@mag})#{@@white}?"
-    @input = gets.strip
-    if @input == "y"
+    input = gets.strip
+    if input == "y" 
       puts "\n#{@@grn}Benefits#{@@white}"
       puts ""
       company.key_benefits.each.with_index(1) do |key_benefits, index|  #assigns index to benefits
         puts "#{index}. #{key_benefits}"
-     end
     end
+    select_benefit
   end
+end
 
+ 
+  def select_benefit(company)
+    puts "\nPlease select a benefit from the list for more information.."
+    chosen_benefit = gets.strip.to_i
+    selected_benefit = WebsiteProject::Company.key_benefits[chosen_benefit - 1]
+    binding.pry
+  end 
+  
   def get_next_step
     puts "\n#{@@mag}To see list again type #{@@white}'list'#{@@mag} or say #{@@white}'exit'#{@@mag} to exit#{@@white}"
     @input = gets.strip
