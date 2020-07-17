@@ -51,12 +51,16 @@ class WebsiteProject::CLI
     
   end
   
-  def benefit_info(company)
+  def benefit_info(company) #pass in benefit ID for user to be able to select a benefit
     company.get_info
     puts "\n#{@@mag}Would you like to see what benefits this company has to offer?(#{@@grn}y#{@@mag}/#{@@muted}n#{@@mag})#{@@white}?"
     @input = gets.strip
     if @input == "y"
-      puts "#{company.key_benefits}"
+      puts "\n#{@@grn}Benefits#{@@white}"
+      puts ""
+      company.key_benefits.each.with_index(1) do |key_benefits, index|  #assigns index to benefits
+        puts "#{index}. #{key_benefits}"
+     end
     end
   end
 
