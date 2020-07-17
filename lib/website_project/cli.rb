@@ -69,7 +69,7 @@ end
     puts "\nPlease select a benefit from the list for more information.."
     input = gets.strip.to_i
     chosen_benefit = company.key_benifits[input - 1]
-    company.
+    company.get_benefit(chosen_benefit)
     puts "#{chosen_benefit}"
   end 
   
