@@ -8,7 +8,7 @@ class WebsiteProject::CLI
   @@white="\e[0m"
 
   def call 
-    puts "\n#{@@cyn}Welcome! Here are the top 100 companies in the Austin area."
+    puts "\n#{@@cyn}Welcome! Here are the top 100 companies in the Austin area.#{@@white}"
     while @input != 'bye'
       print_options
       get_user_selection
@@ -20,9 +20,10 @@ class WebsiteProject::CLI
   
   def print_options
     puts "\nLoading companies.."
+    sleep (2)
     WebsiteProject::Company.prepare_to_list
     WebsiteProject::Company.all.each{|m| puts "#{m.id}: #{m.name}"}
-    puts "\nPlease make a selection for more info.."
+    puts "\nPlease select a company for more info.."
   end 
   
   def get_user_selection #assigns @input to a number
@@ -40,13 +41,15 @@ class WebsiteProject::CLI
   
   def list_info
     puts "\nLoading your chosen company..."
+    sleep (1)
     company = WebsiteProject::Company.find_by_id(@input) 
     company.get_info                                    
-    puts "#{company.name}\n#{company.key_info}"
+    puts "\n#{@@grn}#{company.name}#{@@white}"
+    puts "\n#{company.key_info}"
   end
 
   def get_next_step
-    puts "\n#{@@cyn}To see listing again type #{@@blu}'list'#{@@cyn} or say #{@@blu}'bye'#{@@cyn} to exit#{@@white}"
+    puts "\n#{@@mag}To see list again type #{@@white}'list'#{@@mag} or say #{@@white}'bye'#{@@mag} to exit#{@@white}"
     get_user_selection
   end
   
