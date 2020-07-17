@@ -1,5 +1,5 @@
 class WebsiteProject::Company
-  attr_accessor :name,:key_info,:key_benefits,:id,:ref
+  attr_accessor :name,:key_info,:key_benefits,:specific_benefits,:id,:ref
   
   @@all = []
   
@@ -42,6 +42,10 @@ class WebsiteProject::Company
 
   def get_info
     WebsiteProject::Scraper.scrape_company_info(self) unless @key_info #self is giving info for every company instead of by selected ID
+  end
+  
+  def get_benefit(chosen_benefit)
+    WebsiteProject::Scraper.scrape_specific_benefits(chosen_benefit) unless @key_info #self is giving info for every company instead of by selected ID
   end
   
   

@@ -60,16 +60,17 @@ class WebsiteProject::CLI
       company.key_benefits.each.with_index(1) do |key_benefits, index|  #assigns index to benefits
         puts "#{index}. #{key_benefits}"
     end
-    select_benefit
+    select_benefit(company)
   end
 end
 
  
   def select_benefit(company)
     puts "\nPlease select a benefit from the list for more information.."
-    chosen_benefit = gets.strip.to_i
-    selected_benefit = WebsiteProject::Company.key_benefits[chosen_benefit - 1]
-    binding.pry
+    input = gets.strip.to_i
+    chosen_benefit = company.key_benifits[input - 1]
+    company.
+    puts "#{chosen_benefit}"
   end 
   
   def get_next_step

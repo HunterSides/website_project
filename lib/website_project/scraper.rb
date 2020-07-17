@@ -30,8 +30,21 @@ class WebsiteProject::Scraper
       benefit_title = b.css(".category-title").text
     
       company.key_benefits << benefit_title
-      
   end
+  
+  def self.scrape_specific_benefits(chosen_benefit)
+    benefits_url = "https://www.builtinaustin.com#{company.ref}/benefits"
+    benefits_page = Nokogiri::HTML(open(benefits_url))
+    benefits = benefits_page.css(".block-content .field_perks_list .section .category-title")
+    
+    benefits.each do |b|
+      specific_benefit = b.css(".perk-description").text
+      
+      chosen_benefit << specific_benefit
+  end
+      
+      
+    
 end
   
 end 
