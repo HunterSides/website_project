@@ -45,7 +45,7 @@ class WebsiteProject::Company
   end
   
   def get_benefit(chosen_benefit)
-    WebsiteProject::Scraper.scrape_specific_benefits(chosen_benefit) unless @key_info #self is giving info for every company instead of by selected ID
+    WebsiteProject::Scraper.scrape_specific_benefits(chosen_benefit) unless @key_benefits #self is giving info for every company instead of by selected ID
   end
   
   
