@@ -7,6 +7,7 @@ class WebsiteProject::Company
   def initialize(name,ref)
     @name = name
     @ref = ref
+    @key_benefits = []
     assign_id
     save 
   end

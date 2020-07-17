@@ -21,13 +21,17 @@ class WebsiteProject::Scraper
     info_page = Nokogiri::HTML(open(info_url))
     benefits_page = Nokogiri::HTML(open(benefits_url))
     
-    info = info_page.css(".description").text 
-    
-    benefits = benefits_page.css(".category-title").text
-    
+    info = info_page.css(".description").text
     company.key_info = info
-    company.key_benefits = benefits
-  
+    
+    benefits = benefits_page.css(".block-content .field_perks_list .section")
+    
+    benefits.each do |b|
+      benefit_title = b.css(".category-title").text
+    
+      company.key_benefits << benefit_title
+      
+  end
 end
   
   def self.scrape_benefits(company)

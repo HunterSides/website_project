@@ -47,11 +47,16 @@ class WebsiteProject::CLI
     company.get_info                                    
     puts "\n#{@@grn}#{company.name}#{@@white}"
     puts "\n#{company.key_info}"
+    benefit_info(company)
     
+  end
+  
+  def benefit_info(company)
+    company.get_info
     puts "\n#{@@mag}Would you like to see what benefits this company offers?(#{@@grn}y#{@@mag}/#{@@muted}n#{@@mag})#{@@white}?"
     @input = gets.strip
     if @input == "y"
-      puts "\n#{company.key_benefits}"
+      puts "#{company.key_benefits.all.each}",""
     end
   end
 
@@ -64,6 +69,7 @@ class WebsiteProject::CLI
     puts "Have a wonderful day!"
   end
 end
+
 
 
   
