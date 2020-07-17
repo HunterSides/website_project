@@ -40,13 +40,17 @@ class WebsiteProject::CLI
   end
   
   
-  def list_info
+  def list_info #list company info then prompts user to see benefits if they choose
     puts "\nLoading your chosen company..."
     sleep (1)
     company = WebsiteProject::Company.find_by_id(@input) 
     company.get_info                                    
     puts "\n#{@@grn}#{company.name}#{@@white}"
     puts "\n#{company.key_info}"
+    puts "\n Would you like to see what benefits this company offers?(y/n)"
+    @input = gets.strip
+    if @input == "y"
+      puts "\n#{company.key_benefits}"
   end
 
   def get_next_step
