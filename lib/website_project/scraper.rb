@@ -26,7 +26,7 @@ class WebsiteProject::Scraper
     
     benefits = benefits_page.css(".block-content .field_perks_list .section")
     
-    benefits.each do |b|
+    benefits.each do |b|                            #iterates through each benefit and shovels them into an array in Company.rb
       benefit_title = b.css(".category-title").text
       specific_benefit = b.css("span").text
      
