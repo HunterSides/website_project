@@ -28,15 +28,14 @@ class WebsiteProject::Scraper
     
     benefits.each do |b|                            #iterates through each benefit and shovels them into an array in Company.rb
       benefit_title = b.css(".category-title").text
-      specific_benefit = b.css(".perk-title").text
-     
+      specific_benefit = b.css("h3").text
       company.specific_benefits << specific_benefit
       company.key_benefits << benefit_title
-      
-    end
+     end
   end
 end
-  
+
+
 
 
 

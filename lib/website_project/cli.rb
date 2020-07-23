@@ -65,7 +65,7 @@ class WebsiteProject::CLI
 end
 
  
-  def select_benefit(company) #method selects a benefit and reveals more information about that benefit
+  def select_benefit(company) 
     puts "\nPlease select a benefit from the list for more information.."
     input = gets.strip.to_i
     chosen_benefit = company.specific_benefits[input - 1]
