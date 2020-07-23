@@ -21,7 +21,7 @@ class WebsiteProject::Scraper
     info_page = Nokogiri::HTML(open(info_url))
     benefits_page = Nokogiri::HTML(open(benefits_url))
     
-    info = info_page.css(".description").text
+    info = info_page.css(".description").text.strip
     company.key_info = info
     
     benefits = benefits_page.css(".block-content .field_perks_list .section")

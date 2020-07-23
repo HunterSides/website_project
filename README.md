@@ -1,3 +1,9 @@
+# Welcome to the top 100 companies in Austin, Tx 
+
+This program is meant to help you find a desireable company to work for in the Austin area based off of the top 100 list from https://www.builtinaustin.com/. This program offers multiple interactions to help you determine if this company is right for you! 
+
+
+
 # WebsiteProject #test change
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/website_project`. To experiment with that code, run `bin/console` for an interactive prompt.
