@@ -63,14 +63,19 @@ class WebsiteProject::CLI
     select_benefit(company)
   end
 end
-
  
-  def select_benefit(company) 
+  def select_benefit(company)
+    
     puts "\nPlease select a benefit from the list for more information.."
     input = gets.strip.to_i
-    chosen_benefit = company.specific_benefits[input - 1]
-    sleep (1)
-    puts "\n#{chosen_benefit}"
+      if input <= 0 || input > company.key_benefits.length
+        puts "\n#{@@muted} Error, please input a number based on the list provided.#{@@white}"
+        select_benefit(company)
+      else
+       chosen_benefit = company.specific_benefits[input - 1]
+        sleep (1)
+        puts "\n#{chosen_benefit}"
+      end
   end 
   
   def get_next_step
